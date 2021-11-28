@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/PrzemyslawTrabuc/kapitan-dupa/static/css/main.33ebd77e.chunk.css",
+    "main.js": "/PrzemyslawTrabuc/kapitan-dupa/static/js/main.7a707260.chunk.js",
+    "main.js.map": "/PrzemyslawTrabuc/kapitan-dupa/static/js/main.7a707260.chunk.js.map",
+    "runtime-main.js": "/PrzemyslawTrabuc/kapitan-dupa/static/js/runtime-main.5cbcc80a.js",
+    "runtime-main.js.map": "/PrzemyslawTrabuc/kapitan-dupa/static/js/runtime-main.5cbcc80a.js.map",
+    "static/js/2.12a574b9.chunk.js": "/PrzemyslawTrabuc/kapitan-dupa/static/js/2.12a574b9.chunk.js",
+    "static/js/2.12a574b9.chunk.js.map": "/PrzemyslawTrabuc/kapitan-dupa/static/js/2.12a574b9.chunk.js.map",
+    "static/js/3.0a5d5826.chunk.js": "/PrzemyslawTrabuc/kapitan-dupa/static/js/3.0a5d5826.chunk.js",
+    "static/js/3.0a5d5826.chunk.js.map": "/PrzemyslawTrabuc/kapitan-dupa/static/js/3.0a5d5826.chunk.js.map",
+    "index.html": "/PrzemyslawTrabuc/kapitan-dupa/index.html",
+    "static/css/main.33ebd77e.chunk.css.map": "/PrzemyslawTrabuc/kapitan-dupa/static/css/main.33ebd77e.chunk.css.map",
+    "static/js/2.12a574b9.chunk.js.LICENSE.txt": "/PrzemyslawTrabuc/kapitan-dupa/static/js/2.12a574b9.chunk.js.LICENSE.txt",
+    "static/media/atak.06162c2b.png": "/PrzemyslawTrabuc/kapitan-dupa/static/media/atak.06162c2b.png",
+    "static/media/spoczynek.0c24c5b2.png": "/PrzemyslawTrabuc/kapitan-dupa/static/media/spoczynek.0c24c5b2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5cbcc80a.js",
+    "static/js/2.12a574b9.chunk.js",
+    "static/css/main.33ebd77e.chunk.css",
+    "static/js/main.7a707260.chunk.js"
+  ]
+}

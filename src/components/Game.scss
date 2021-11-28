@@ -1,0 +1,16 @@
+$bodyBackgroundColor: #1e1e1e;
+
+body{
+  background-color: $bodyBackgroundColor;
+}
+
+#main_game_window{
+
+}
+#main_game_window > img {
+  max-height: 99vh;
+  display: block;
+  margin:auto;
+  width: auto;
+  max-width:1050px;
+}

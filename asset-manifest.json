@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/kapitan-dupa/static/css/main.73e7e28f.chunk.css",
-    "main.js": "/kapitan-dupa/static/js/main.f19395fd.chunk.js",
-    "main.js.map": "/kapitan-dupa/static/js/main.f19395fd.chunk.js.map",
-    "runtime-main.js": "/kapitan-dupa/static/js/runtime-main.51e54a9e.js",
-    "runtime-main.js.map": "/kapitan-dupa/static/js/runtime-main.51e54a9e.js.map",
-    "static/js/2.f22e5467.chunk.js": "/kapitan-dupa/static/js/2.f22e5467.chunk.js",
-    "static/js/2.f22e5467.chunk.js.map": "/kapitan-dupa/static/js/2.f22e5467.chunk.js.map",
-    "static/js/3.61263481.chunk.js": "/kapitan-dupa/static/js/3.61263481.chunk.js",
-    "static/js/3.61263481.chunk.js.map": "/kapitan-dupa/static/js/3.61263481.chunk.js.map",
+    "main.js": "/kapitan-dupa/static/js/main.dad7419f.chunk.js",
+    "main.js.map": "/kapitan-dupa/static/js/main.dad7419f.chunk.js.map",
+    "runtime-main.js": "/kapitan-dupa/static/js/runtime-main.6fe88a11.js",
+    "runtime-main.js.map": "/kapitan-dupa/static/js/runtime-main.6fe88a11.js.map",
+    "static/js/2.5e0ac477.chunk.js": "/kapitan-dupa/static/js/2.5e0ac477.chunk.js",
+    "static/js/2.5e0ac477.chunk.js.map": "/kapitan-dupa/static/js/2.5e0ac477.chunk.js.map",
+    "static/js/3.149b7772.chunk.js": "/kapitan-dupa/static/js/3.149b7772.chunk.js",
+    "static/js/3.149b7772.chunk.js.map": "/kapitan-dupa/static/js/3.149b7772.chunk.js.map",
     "index.html": "/kapitan-dupa/index.html",
     "static/css/main.73e7e28f.chunk.css.map": "/kapitan-dupa/static/css/main.73e7e28f.chunk.css.map",
-    "static/js/2.f22e5467.chunk.js.LICENSE.txt": "/kapitan-dupa/static/js/2.f22e5467.chunk.js.LICENSE.txt"
+    "static/js/2.5e0ac477.chunk.js.LICENSE.txt": "/kapitan-dupa/static/js/2.5e0ac477.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.51e54a9e.js",
-    "static/js/2.f22e5467.chunk.js",
+    "static/js/runtime-main.6fe88a11.js",
+    "static/js/2.5e0ac477.chunk.js",
     "static/css/main.73e7e28f.chunk.css",
-    "static/js/main.f19395fd.chunk.js"
+    "static/js/main.dad7419f.chunk.js"
   ]
 }

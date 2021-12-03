@@ -1,14 +1,16 @@
 import React from 'react';
 import './GameBar.scss'
 import KwiatyLotosu from './KwiatyLotosu'
+import FireButton from './FireButton'
+import Score from './Score'
 
-function GameBar(){
+function GameBar(props){
 
     return(
         <div className="GameBar">
-        <div style={{backgroundColor: 'red'}}></div>
+        <div><Score Score={props.Score} /></div>
         <div style={{ minWidth: "50%"}}><KwiatyLotosu /></div>
-        <div style={{backgroundColor: 'blue'}}></div>
+        <div><FireButton handleClickFireButton={props.handleClickFireButton} /></div>
         </div>
     )
 }

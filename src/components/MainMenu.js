@@ -1,11 +1,14 @@
 import React from 'react';
 import './MainMenu.scss';
 
-function MainMenu(props,changeGameWindow){
+
+function MainMenu(props){
 
    const handleStartClick = () => {
-        props.changeGameWindow("Game");
+       props.changeGameWindow("Game");
+       props.StartGame();
     }
+
 
     return(
         <div id="MainMenu">

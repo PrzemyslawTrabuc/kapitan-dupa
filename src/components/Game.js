@@ -12,44 +12,42 @@ import kwiatyLotosu5 from '../images/kwiatyLotosu5.png'
 import kwiatyLotosu6 from '../images/kwiatyLotosu6.png'
 import GameBar from './GameBar';
 
-function Game() {
-    var kwiatyLotosu = [kwiatyLotosu0,kwiatyLotosu1,kwiatyLotosu2,kwiatyLotosu3,kwiatyLotosu4,kwiatyLotosu5,kwiatyLotosu6];
-    const[currentGameWindow, setCurrentGameWindow]  = useState('Menu')
-    const[mainGameImage,setMainGameImage] = useState(spoczynek_png);
-    const[Score,setScore] = useState(0);
-    const[currentKwiatyLotosu,setCurrentKwiatyLotosu]= useState(0);
-    const[isPressed,setIsPressed]=useState(false);
-    const[isGameActive,setIsGameActive]=useState(true);
+class Game extends React.Component {
+  constructor(props){
+      super(props);
+      this.state={currentGameWindow:'Menu', mainGameImage:spoczynek_png, Score:0, currentKwiatyLotosu:0, isPressed:false, isGameActive:true};
+      this.kwiatyLotosu = [kwiatyLotosu0,kwiatyLotosu1,kwiatyLotosu2,kwiatyLotosu3,kwiatyLotosu4,kwiatyLotosu5,kwiatyLotosu6];
+  }
 
-    const StartGame = () =>{
+    StartGame = () =>{
         var timeleft = 10;
         const myInterval = timeleft/6;
         const Timer = () => {
             timeleft = timeleft - myInterval;
             if (timeleft <= 0) {
                 clearInterval(interv);
-                setCurrentKwiatyLotosu(6);
-                setIsGameActive(false);
+                this.setState({currentKwiatyLotosu:6});
+                this.setState({isGameActive:false});
             }else{
                 switch(true){
                     case timeleft >= 5*myInterval:
-                        setCurrentKwiatyLotosu(1);
+                        this.setState({currentKwiatyLotosu:1});
                         break;
                     case timeleft >= 3.99*myInterval:
-                        setCurrentKwiatyLotosu(2);
+                        this.setState({currentKwiatyLotosu:2});
                         break;
                     case timeleft >= 3*myInterval:
-                        setCurrentKwiatyLotosu(3);
+                        this.setState({currentKwiatyLotosu:3});
                         break;
                     case timeleft >= 1.99*myInterval:
-                        setCurrentKwiatyLotosu(4);
+                        this.setState({currentKwiatyLotosu:4});
                         break;
                     case timeleft >= 0.99*myInterval:
-                        setCurrentKwiatyLotosu(5);
+                        this.setState({currentKwiatyLotosu:5});
                         break;
                     case timeleft >= 0:
-                        setCurrentKwiatyLotosu(6);
-                        setIsGameActive(false);
+                        this.setState({currentKwiatyLotosu:6});
+                        this.setState({isGameActive:false});
                         break;
                 }
             }
@@ -58,52 +56,53 @@ function Game() {
 
     }
 
-    const handleSpaceBarClick = (event) => {
-        if(event.keyCode === 32 && event.type === "keydown" && isGameActive===true){
-            if(isPressed===false) {
-                document.addEventListener("keyup", handleSpaceBarClick)
-                setIsPressed(true);
-                setScore(Score + 100);
-                setMainGameImage(atak_png);
+    handleSpaceBarClick = (event) =>{
+        if(event.keyCode === 32 && event.type === "keydown" && this.state.isGameActive===true){
+            if(this.state.isPressed===false) {
+                document.addEventListener("keyup", this.handleSpaceBarClick)
+                this.setState({isPressed:true, Score:this.state.Score+100, mainGameImage:atak_png})
             }
-        }else if(event.type === "keyup" && event.keyCode === 32 && isGameActive===true) {
-            setIsPressed(false);
-            setMainGameImage(spoczynek_png);
-            document.removeEventListener("keyup", handleSpaceBarClick)
+        }else if(event.type === "keyup" && event.keyCode === 32 && this.state.isGameActive===true) {
+            this.setState({isPressed:false,mainGameImage:spoczynek_png});
+            document.removeEventListener("keyup", this.handleSpaceBarClick)
         }
     }
 
-    useEffect(()=> {
-        document.addEventListener("keydown", handleSpaceBarClick);
-        return () => document.removeEventListener("keydown", handleSpaceBarClick);
-    })
-
-    const handleClickFireButton = (event) =>{
-        if(event.type === "mousedown" && isGameActive===true){
-            setMainGameImage(atak_png);
-            setScore(Score + 100);
-        }else if(event.type === "mouseup" && isGameActive===true) {
-            setMainGameImage(spoczynek_png);
+    handleClickFireButton = (event) =>{
+        if(event.type === "mousedown" && this.state.isGameActive===true){
+            this.setState({Score:this.state.Score+100,mainGameImage:atak_png});
+        }else if(event.type === "mouseup" && this.state.isGameActive===true) {
+            this.setState({mainGameImage:spoczynek_png});
         }
     }
 
-    const changeGameWindow = (windowToSet) => {
-        setCurrentGameWindow(windowToSet);
+    changeGameWindow = (windowToSet) => {
+        this.setState({currentGameWindow: windowToSet});
+    }
+    componentDidMount() {
+        document.addEventListener("keydown", this.handleSpaceBarClick)
     }
 
-    if(currentGameWindow === "Game"){
+    render(){
+    if(this.state.currentGameWindow === "Game"){
         return (
             <div id={"main_game_window"}>
-                <img alt='głowny ekran gry' src={mainGameImage} />
-                <GameBar handleClickFireButton={handleClickFireButton} Score={Score} currentKwiatyLotosu={kwiatyLotosu[currentKwiatyLotosu]} handleSpaceBarClick={handleSpaceBarClick}/>
+                <img alt='głowny ekran gry' src={this.state.mainGameImage} />
+                <GameBar
+                    handleClickFireButton={this.handleClickFireButton}
+                    Score={this.state.Score}
+                    currentKwiatyLotosu={this.kwiatyLotosu[this.state.currentKwiatyLotosu]}
+                    handleSpaceBarClick={this.handleSpaceBarClick}
+                />
             </div>
         );
     }else{
         return (
-            <MainMenu changeGameWindow={changeGameWindow} StartGame={StartGame} />
+            <MainMenu changeGameWindow={this.changeGameWindow} StartGame={this.StartGame} />
         );
     }
 
+}
 }
 
 export default Game;

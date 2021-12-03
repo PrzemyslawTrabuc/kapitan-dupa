@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import './MainMenu.scss';
 
 function MainMenu(props,changeGameWindow){
@@ -10,7 +10,7 @@ function MainMenu(props,changeGameWindow){
     return(
         <div id="MainMenu">
             <h1>Kapitan Dupa</h1>
-            <h2 onClick={handleStartClick}>START</h2>
+            <h2 id="START-Button" onClick={handleStartClick}>START</h2>
         </div>
     );
 }

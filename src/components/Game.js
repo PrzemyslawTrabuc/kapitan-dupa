@@ -3,6 +3,7 @@ import './Game.scss';
 import MainMenu from './MainMenu'
 import spoczynek_png from '../images/spoczynek.png';
 import atak_png from '../images/atak.png';
+import GameBar from './GameBar';
 
 function Game() {
 
@@ -22,14 +23,15 @@ function Game() {
     const changeGameWindow = (windowToSet) => {
         setCurrentGameWindow(windowToSet);
     }
-    
     document.addEventListener("keydown", doRypanie);
     document.addEventListener("keyup", doRypanie);
+
 
     if(currentGameWindow === "Game"){
         return (
             <div id={"main_game_window"}>
                 <img alt='głowny ekran gry' src={mainGameAction} />
+                <GameBar />
             </div>
         );
     }else{
@@ -37,7 +39,6 @@ function Game() {
             <MainMenu changeGameWindow={changeGameWindow} />
         );
     }
-
 
 }
 

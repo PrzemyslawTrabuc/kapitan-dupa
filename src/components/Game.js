@@ -15,10 +15,11 @@ import GameBar from './GameBar';
 function Game() {
     var kwiatyLotosu = [kwiatyLotosu0,kwiatyLotosu1,kwiatyLotosu2,kwiatyLotosu3,kwiatyLotosu4,kwiatyLotosu5,kwiatyLotosu6];
     const[currentGameWindow, setCurrentGameWindow]  = useState('Menu')
-    const[mainGameAction,setMainGameImage] = useState(spoczynek_png);
+    const[mainGameImage,setMainGameImage] = useState(spoczynek_png);
     const[Score,setScore] = useState(0);
-    const[isPressed,setIsPressed] = useState(false);
     const[currentKwiatyLotosu,setCurrentKwiatyLotosu]= useState(0);
+    const[isPressed,setIsPressed]=useState(false);
+    const[isGameActive,setIsGameActive]=useState(true);
 
     const StartGame = () =>{
         var timeleft = 10;
@@ -27,75 +28,74 @@ function Game() {
             timeleft = timeleft - myInterval;
             if (timeleft <= 0) {
                 clearInterval(interv);
+                setCurrentKwiatyLotosu(6);
+                setIsGameActive(false);
             }else{
                 switch(true){
                     case timeleft >= 5*myInterval:
                         setCurrentKwiatyLotosu(1);
                         break;
-                    case timeleft >= 4*myInterval:
+                    case timeleft >= 3.99*myInterval:
                         setCurrentKwiatyLotosu(2);
                         break;
                     case timeleft >= 3*myInterval:
                         setCurrentKwiatyLotosu(3);
                         break;
-                    case timeleft >= 2*myInterval:
+                    case timeleft >= 1.99*myInterval:
                         setCurrentKwiatyLotosu(4);
                         break;
-                    case timeleft >= myInterval:
+                    case timeleft >= 0.99*myInterval:
                         setCurrentKwiatyLotosu(5);
                         break;
-                    case timeleft <= myInterval:
+                    case timeleft >= 0:
                         setCurrentKwiatyLotosu(6);
+                        setIsGameActive(false);
+                        break;
                 }
             }
         }
         var interv = setInterval(Timer, myInterval*1000);
+
     }
 
-
-    const doRypanie = (event) => {
-         if(event.keyCode === 32 && event.type === "keydown"){
-             if(isPressed === false) {
-                 setIsPressed(true);
-                 setMainGameImage(atak_png);
-                 GainScore();
-             }
-             document.removeEventListener("keydown", doRypanie);
-         }else if(event.type === "keyup" && event.keyCode === 32) {
-             setMainGameImage(spoczynek_png);
-             setIsPressed(false);
-         }
-    }
-
-    useEffect(()=>{
-        document.addEventListener("keydown", doRypanie);
-        document.addEventListener("keyup", doRypanie);
-    })
-
-    const handleClickFireButton = (event) =>{
-        if(event.type === "mousedown"){
-            setMainGameImage(atak_png);
-            GainScore();
-        }else if(event.type === "mouseup") {
+    const handleSpaceBarClick = (event) => {
+        if(event.keyCode === 32 && event.type === "keydown" && isGameActive===true){
+            if(isPressed===false) {
+                document.addEventListener("keyup", handleSpaceBarClick)
+                setIsPressed(true);
+                setScore(Score + 100);
+                setMainGameImage(atak_png);
+            }
+        }else if(event.type === "keyup" && event.keyCode === 32 && isGameActive===true) {
+            setIsPressed(false);
             setMainGameImage(spoczynek_png);
-           // setIsPressed(false);
+            document.removeEventListener("keyup", handleSpaceBarClick)
         }
     }
 
-    const GainScore = () =>{
+    useEffect(()=> {
+        document.addEventListener("keydown", handleSpaceBarClick);
+        return () => document.removeEventListener("keydown", handleSpaceBarClick);
+    })
+
+    const handleClickFireButton = (event) =>{
+        if(event.type === "mousedown" && isGameActive===true){
+            setMainGameImage(atak_png);
             setScore(Score + 100);
+        }else if(event.type === "mouseup" && isGameActive===true) {
+            setMainGameImage(spoczynek_png);
+        }
     }
 
     const changeGameWindow = (windowToSet) => {
         setCurrentGameWindow(windowToSet);
     }
 
-
     if(currentGameWindow === "Game"){
         return (
             <div id={"main_game_window"}>
-                <img alt='głowny ekran gry' src={mainGameAction} />
-                <GameBar handleClickFireButton={handleClickFireButton} Score={Score} currentKwiatyLotosu={kwiatyLotosu[currentKwiatyLotosu]}/>
+                <img alt='głowny ekran gry' src={mainGameImage} />
+                <GameBar handleClickFireButton={handleClickFireButton} Score={Score} currentKwiatyLotosu={kwiatyLotosu[currentKwiatyLotosu]} handleSpaceBarClick={handleSpaceBarClick}/>
             </div>
         );
     }else{

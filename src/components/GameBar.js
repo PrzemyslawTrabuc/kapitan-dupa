@@ -8,7 +8,7 @@ function GameBar(props){
     return(
         <div className="GameBar">
         <div><Score Score={props.Score} /></div>
-        <div style={{ minWidth: "50%"}}><KwiatyLotosu currentKwiatyLotosu={props.currentKwiatyLotosu}/></div>
+        <div style={{ minWidth: "50%"}}><KwiatyLotosu currentKwiatyLotosu={props.currentKwiatyLotosu} handleSpaceBarClick={props.handleSpaceBarClick}/></div>
         <div><FireButton handleClickFireButton={props.handleClickFireButton} /></div>
         </div>
     )

@@ -69,9 +69,9 @@ class Game extends React.Component {
     }
 
     handleClickFireButton = (event) =>{
-        if(event.type === "mousedown" && this.state.isGameActive===true){
+        if((event.type === "mousedown" || event.type ==="ontouchstart" || event.type === "") && this.state.isGameActive===true){
             this.setState({Score:this.state.Score+100,mainGameImage:atak_png});
-        }else if(event.type === "mouseup" && this.state.isGameActive===true) {
+        }else if((event.type === "mouseup" || event.type==="ontouchend") && this.state.isGameActive===true) {
             this.setState({mainGameImage:spoczynek_png});
         }
     }

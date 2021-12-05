@@ -15,10 +15,16 @@ h1{
 h2{
   font-size:4rem;
 }
-h3{
-  font-size:2rem;
-}
 #START-Button{
   margin-top:35vh;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 780px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2{
+    font-size: 3rem;
+  }
 }

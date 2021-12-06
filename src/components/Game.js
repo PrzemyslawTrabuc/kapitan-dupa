@@ -96,7 +96,7 @@ class Game extends React.Component {
 
     componentDidMount() {
         document.addEventListener("keydown", this.handleSpaceBarClick)
-        //this.playAudio(introSound);
+        this.playAudio(introSound);
     }
 
     render(){

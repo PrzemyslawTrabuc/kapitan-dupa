@@ -11,7 +11,7 @@ $textColor: rgb(0,255,0);
   color: $textColor;
   box-shadow: 0 0 2px $textColor;
   text-shadow: 0 0 4px $textColor;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   background-Color:rgba(0,255,0,0.15);
 }
 #Score h3{
@@ -26,7 +26,7 @@ h3{
     font-size:1rem;
   }
   #Score{
-    height:45%;
-    margin-top:7vh;
+    height:50%;
+    margin-top:6vh;
   }
 }

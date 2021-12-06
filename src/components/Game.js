@@ -21,11 +21,10 @@ class Game extends React.Component {
   }
 
     StartGame = () =>{
-        let timeleft = 2;
+        let timeleft = 10.5;
         const myInterval = timeleft/6;
         const Timer = () => {
             timeleft = timeleft - myInterval;
-            console.log(timeleft);
                 switch(true){
                     case timeleft >= 5*myInterval:
                         this.setState({currentKwiatyLotosu:1});
@@ -81,7 +80,6 @@ class Game extends React.Component {
     }
 
     restartGame = () =>{
-        console.log("restart from Game.js")
         this.setState({currentGameWindow:'Menu', mainGameImage:spoczynek_png, Score:0, currentKwiatyLotosu:0, isPressed:false, isGameActive:true});
     }
 

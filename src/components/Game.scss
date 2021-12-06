@@ -23,12 +23,13 @@ height:100vh;
   margin-left:auto;
   margin-right:auto;
   color:$green-theme;
-  font-size:10rem;
-  margin-top:10vh;
+  font-size:12rem;
+  margin-top:8vh;
   text-align:center;
   text-shadow: -1px -1px 0 $bodyBackgroundColor, 1px -1px 0 $bodyBackgroundColor, -1px 1px 0 $bodyBackgroundColor, 1px 1px 0 $bodyBackgroundColor;
   animation: blinking 0.9s infinite;
   font-weight:400;
+  letter-spacing: 5px;
 }
 
 @keyframes blinking

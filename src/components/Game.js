@@ -96,7 +96,7 @@ class Game extends React.Component {
 
     componentDidMount() {
         document.addEventListener("keydown", this.handleSpaceBarClick)
-        this.playAudio(introSound);
+        //this.playAudio(introSound);
     }
 
     render(){
@@ -129,8 +129,8 @@ class Game extends React.Component {
     else if(this.state.currentGameWindow === "GameOver" && this.state.isGameActive===false){
         return(
             <div id={"main_game_window"}>
+                <img alt='głowny ekran gry' src={this.state.mainGameImage} style={{opacity: 0}} />
             <GameOver Score={this.state.Score} restartGame={this.restartGame} playAudio={this.playAudio} />
-                <div className="instead-of-image" />
             <GameBar
             handleClickFireButton={this.handleClickFireButton}
             Score={this.state.Score}
@@ -144,7 +144,7 @@ class Game extends React.Component {
     }
     else{
         return (
-            <MainMenu changeGameWindow={this.changeGameWindow} StartGame={this.StartGame} />
+            <MainMenu changeGameWindow={this.changeGameWindow} StartGame={this.StartGame} playAudio={this.playAudio} />
         );
     }
 

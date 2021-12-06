@@ -3,7 +3,6 @@ $bodyBackgroundColor: #1e1e1e;
 
 #game-over-score{
   width:100%;
-  position: fixed;
   margin-left:auto;
   margin-right:auto;
   color:$green-theme;
@@ -11,6 +10,8 @@ $bodyBackgroundColor: #1e1e1e;
   margin-top:0vh;
   text-align:center;
   font-weight:400;
+  position: absolute;
+  top:5px;
 }
 
 #game-over-score > p{
@@ -27,10 +28,10 @@ $bodyBackgroundColor: #1e1e1e;
 @media only screen and (max-width: 980px) {
 
   #game-over-score{
-    font-size:4rem;
+    font-size:2.5rem;
   }
   #Restart{
-    font-size:3rem;
+    font-size:2rem;
     margin-top:10vh;
   }
 }

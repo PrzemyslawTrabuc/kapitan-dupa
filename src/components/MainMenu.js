@@ -1,7 +1,6 @@
 import React from 'react';
 import './MainMenu.scss';
 
-
 function MainMenu(props){
 
    const handleStartClick = () => {

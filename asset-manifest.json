@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/kapitan-dupa/static/css/main.47810b43.chunk.css",
-    "main.js": "/kapitan-dupa/static/js/main.2fbef58e.chunk.js",
-    "main.js.map": "/kapitan-dupa/static/js/main.2fbef58e.chunk.js.map",
+    "main.css": "/kapitan-dupa/static/css/main.a7db4622.chunk.css",
+    "main.js": "/kapitan-dupa/static/js/main.48a1f853.chunk.js",
+    "main.js.map": "/kapitan-dupa/static/js/main.48a1f853.chunk.js.map",
     "runtime-main.js": "/kapitan-dupa/static/js/runtime-main.3ede24d4.js",
     "runtime-main.js.map": "/kapitan-dupa/static/js/runtime-main.3ede24d4.js.map",
     "static/js/2.5e0ac477.chunk.js": "/kapitan-dupa/static/js/2.5e0ac477.chunk.js",
@@ -10,13 +10,15 @@
     "static/js/3.b71b4a0b.chunk.js": "/kapitan-dupa/static/js/3.b71b4a0b.chunk.js",
     "static/js/3.b71b4a0b.chunk.js.map": "/kapitan-dupa/static/js/3.b71b4a0b.chunk.js.map",
     "index.html": "/kapitan-dupa/index.html",
-    "static/css/main.47810b43.chunk.css.map": "/kapitan-dupa/static/css/main.47810b43.chunk.css.map",
-    "static/js/2.5e0ac477.chunk.js.LICENSE.txt": "/kapitan-dupa/static/js/2.5e0ac477.chunk.js.LICENSE.txt"
+    "static/css/main.a7db4622.chunk.css.map": "/kapitan-dupa/static/css/main.a7db4622.chunk.css.map",
+    "static/js/2.5e0ac477.chunk.js.LICENSE.txt": "/kapitan-dupa/static/js/2.5e0ac477.chunk.js.LICENSE.txt",
+    "static/media/during-game.d3cf3b60.mp3": "/kapitan-dupa/static/media/during-game.d3cf3b60.mp3",
+    "static/media/intro.3b6fadd1.mp3": "/kapitan-dupa/static/media/intro.3b6fadd1.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.3ede24d4.js",
     "static/js/2.5e0ac477.chunk.js",
-    "static/css/main.47810b43.chunk.css",
-    "static/js/main.2fbef58e.chunk.js"
+    "static/css/main.a7db4622.chunk.css",
+    "static/js/main.48a1f853.chunk.js"
   ]
 }

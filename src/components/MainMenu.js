@@ -13,7 +13,10 @@ function MainMenu(props){
     return(
         <div id="MainMenu">
             <h1>Kapitan Dupa</h1>
-            <h2 id="START-Button" onClick={handleStartClick}>START</h2>
+            <div id="menu-items">
+                <h2  onClick={handleStartClick}>START</h2>
+                <h2>Highscores</h2> {/*TODO: add action to highs-core */}
+            </div>
         </div>
     );
 }

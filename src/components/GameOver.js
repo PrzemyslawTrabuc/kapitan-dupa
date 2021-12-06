@@ -1,10 +1,12 @@
 import React from 'react';
 import './GameOver.scss';
+import introSound from '../sounds/intro.mp3';
 
-function GameOver({Score, restartGame}){
+function GameOver({Score, restartGame, playAudio}){
 
     function handleRestartClick(){
         restartGame();
+        playAudio(introSound)
     }
 
     return(

@@ -12,6 +12,8 @@ import kwiatyLotosu5 from '../images/kwiatyLotosu5.png'
 import kwiatyLotosu6 from '../images/kwiatyLotosu6.png'
 import GameBar from './GameBar';
 import GameOver from './GameOver';
+import introSound from '../sounds/intro.mp3';
+import gamingSound from '../sounds/during-game.mp3';
 
 class Game extends React.Component {
   constructor(props){
@@ -21,7 +23,8 @@ class Game extends React.Component {
   }
 
     StartGame = () =>{
-        let timeleft = 10.5;
+        this.playAudio(gamingSound);
+        let timeleft = 30;
         const myInterval = timeleft/6;
         const Timer = () => {
             timeleft = timeleft - myInterval;
@@ -41,7 +44,7 @@ class Game extends React.Component {
                     case timeleft >= 0.99*myInterval:
                         this.setState({currentKwiatyLotosu:5});
                         break;
-                    case timeleft >= 0:
+                    case timeleft <= myInterval:
                         clearInterval(interv);
                         this.setState({currentKwiatyLotosu:6,isGameActive:false});
                         setTimeout(() => this.setState({currentGameWindow:"GameOver"}), 3000);
@@ -83,8 +86,17 @@ class Game extends React.Component {
         this.setState({currentGameWindow:'Menu', mainGameImage:spoczynek_png, Score:0, currentKwiatyLotosu:0, isPressed:false, isGameActive:true});
     }
 
+    playAudio = (audio) =>{
+        let sound = new Audio(audio);
+        sound.play()
+        .catch(err =>{
+            console.log("DLACZEGO NIE RYPIECIE");
+        });
+    }
+
     componentDidMount() {
         document.addEventListener("keydown", this.handleSpaceBarClick)
+        this.playAudio(introSound);
     }
 
     render(){
@@ -104,7 +116,7 @@ class Game extends React.Component {
         return (
             <div id={"main_game_window"}>
                 <div id="game-over-alert">GAME OVER</div>
-                <img alt='głowny ekran gry' src={this.state.mainGameImage} />
+                <img alt='głowny ekran gry' src={this.state.mainGameImage}/>
                 <GameBar
                     handleClickFireButton={this.handleClickFireButton}
                     Score={this.state.Score}
@@ -116,7 +128,18 @@ class Game extends React.Component {
     }
     else if(this.state.currentGameWindow === "GameOver" && this.state.isGameActive===false){
         return(
-            <GameOver Score={this.state.Score} restartGame={this.restartGame} />
+            <div id={"main_game_window"}>
+            <GameOver Score={this.state.Score} restartGame={this.restartGame} playAudio={this.playAudio} />
+                <div className="instead-of-image" />
+            <GameBar
+            handleClickFireButton={this.handleClickFireButton}
+            Score={this.state.Score}
+            currentKwiatyLotosu={this.kwiatyLotosu[this.state.currentKwiatyLotosu]}
+            handleSpaceBarClick={this.handleSpaceBarClick}
+            />
+
+            </div>
+
         )
     }
     else{

@@ -11,6 +11,7 @@ import kwiatyLotosu4 from '../images/kwiatyLotosu4.png'
 import kwiatyLotosu5 from '../images/kwiatyLotosu5.png'
 import kwiatyLotosu6 from '../images/kwiatyLotosu6.png'
 import GameBar from './GameBar';
+import GameOver from './GameOver';
 
 class Game extends React.Component {
   constructor(props){
@@ -20,15 +21,11 @@ class Game extends React.Component {
   }
 
     StartGame = () =>{
-        var timeleft = 10;
+        let timeleft = 2;
         const myInterval = timeleft/6;
         const Timer = () => {
             timeleft = timeleft - myInterval;
-            if (timeleft <= 0) {
-                clearInterval(interv);
-                this.setState({currentKwiatyLotosu:6});
-                this.setState({isGameActive:false});
-            }else{
+            console.log(timeleft);
                 switch(true){
                     case timeleft >= 5*myInterval:
                         this.setState({currentKwiatyLotosu:1});
@@ -46,13 +43,13 @@ class Game extends React.Component {
                         this.setState({currentKwiatyLotosu:5});
                         break;
                     case timeleft >= 0:
-                        this.setState({currentKwiatyLotosu:6});
-                        this.setState({isGameActive:false});
+                        clearInterval(interv);
+                        this.setState({currentKwiatyLotosu:6,isGameActive:false});
+                        setTimeout(() => this.setState({currentGameWindow:"GameOver"}), 3000);
                         break;
                 }
-            }
         }
-        var interv = setInterval(Timer, myInterval*1000);
+        let interv = setInterval(Timer, myInterval*1000);
 
     }
 
@@ -82,12 +79,18 @@ class Game extends React.Component {
     changeGameWindow = (windowToSet) => {
         this.setState({currentGameWindow: windowToSet});
     }
+
+    restartGame = () =>{
+        console.log("restart from Game.js")
+        this.setState({currentGameWindow:'Menu', mainGameImage:spoczynek_png, Score:0, currentKwiatyLotosu:0, isPressed:false, isGameActive:true});
+    }
+
     componentDidMount() {
         document.addEventListener("keydown", this.handleSpaceBarClick)
     }
 
     render(){
-    if(this.state.currentGameWindow === "Game"){
+    if(this.state.currentGameWindow === "Game" && this.state.isGameActive===true){
         return (
             <div id={"main_game_window"}>
                 <img alt='głowny ekran gry' src={this.state.mainGameImage} />
@@ -99,7 +102,26 @@ class Game extends React.Component {
                 />
             </div>
         );
-    }else{
+    }else if(this.state.currentGameWindow === "Game" && this.state.isGameActive===false){
+        return (
+            <div id={"main_game_window"}>
+                <div id="game-over-alert">GAME OVER</div>
+                <img alt='głowny ekran gry' src={this.state.mainGameImage} />
+                <GameBar
+                    handleClickFireButton={this.handleClickFireButton}
+                    Score={this.state.Score}
+                    currentKwiatyLotosu={this.kwiatyLotosu[this.state.currentKwiatyLotosu]}
+                    handleSpaceBarClick={this.handleSpaceBarClick}
+                />
+            </div>
+        );
+    }
+    else if(this.state.currentGameWindow === "GameOver" && this.state.isGameActive===false){
+        return(
+            <GameOver Score={this.state.Score} restartGame={this.restartGame} />
+        )
+    }
+    else{
         return (
             <MainMenu changeGameWindow={this.changeGameWindow} StartGame={this.StartGame} />
         );

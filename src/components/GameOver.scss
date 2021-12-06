@@ -1,0 +1,36 @@
+$green-theme: rgb(0,255,0);
+$bodyBackgroundColor: #1e1e1e;
+
+#game-over-score{
+  width:100%;
+  position: fixed;
+  margin-left:auto;
+  margin-right:auto;
+  color:$green-theme;
+  font-size:6rem;
+  margin-top:5vh;
+  text-align:center;
+  font-weight:400;
+}
+
+#game-over-score > p{
+  text-shadow: 0 0 4px $green-theme;
+  margin-top:1vh;
+  margin-bottom:3vh;
+}
+#Restart{
+  margin-top:20vh;
+  text-shadow: 0 0 4px $green-theme;
+  font-size:4rem;
+  cursor: pointer;
+}
+@media only screen and (max-width: 980px) {
+
+  #game-over-score{
+    font-size:4rem;
+  }
+  #Restart{
+    font-size:3rem;
+    margin-top:10vh;
+  }
+}

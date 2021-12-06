@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kapitan-dupa/static/css/main.926ce11b.chunk.css",
+    "main.css": "/kapitan-dupa/static/css/main.5ff87c1e.chunk.css",
     "main.js": "/kapitan-dupa/static/js/main.dc802111.chunk.js",
     "main.js.map": "/kapitan-dupa/static/js/main.dc802111.chunk.js.map",
     "runtime-main.js": "/kapitan-dupa/static/js/runtime-main.d5649cf7.js",
@@ -10,13 +10,13 @@
     "static/js/3.fb99bf9f.chunk.js": "/kapitan-dupa/static/js/3.fb99bf9f.chunk.js",
     "static/js/3.fb99bf9f.chunk.js.map": "/kapitan-dupa/static/js/3.fb99bf9f.chunk.js.map",
     "index.html": "/kapitan-dupa/index.html",
-    "static/css/main.926ce11b.chunk.css.map": "/kapitan-dupa/static/css/main.926ce11b.chunk.css.map",
+    "static/css/main.5ff87c1e.chunk.css.map": "/kapitan-dupa/static/css/main.5ff87c1e.chunk.css.map",
     "static/js/2.e6268eb2.chunk.js.LICENSE.txt": "/kapitan-dupa/static/js/2.e6268eb2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d5649cf7.js",
     "static/js/2.e6268eb2.chunk.js",
-    "static/css/main.926ce11b.chunk.css",
+    "static/css/main.5ff87c1e.chunk.css",
     "static/js/main.dc802111.chunk.js"
   ]
 }

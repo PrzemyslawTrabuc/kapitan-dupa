@@ -6,7 +6,7 @@ function KwiatyLotosu(props){
 
     return(
         <div id="KwiatyLotosu">
-        <img  src={props.currentKwiatyLotosu} alt="abc" />
+        <h3>HIT</h3> <img  src={props.currentKwiatyLotosu} alt="abc" />
         </div>
     )
 }

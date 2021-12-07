@@ -8,7 +8,7 @@ import Score from './Score'
 function GameBar(props) {
     return (<div className="GameBar">
         <div><Score Score={props.Score}/></div>
-        <div style={{minWidth: "50%"}}>
+        <div style={{minWidth: "53%"}}>
             <KwiatyLotosu currentKwiatyLotosu={props.currentKwiatyLotosu}
                           handleSpaceBarClick={props.handleSpaceBarClick}
             />

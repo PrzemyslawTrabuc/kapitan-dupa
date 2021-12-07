@@ -17,3 +17,13 @@ $textColor: rgb(0,255,0);
 #FireButton h3{
 margin:0;
 }
+
+@media only screen and (max-width: 980px) {
+  #FireButton h3{
+    font-size:1rem;
+  }
+  #FireButton{
+    height:50%;
+    margin-top:6vh;
+  }
+}

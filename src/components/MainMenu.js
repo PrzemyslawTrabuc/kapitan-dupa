@@ -8,7 +8,6 @@ function MainMenu(props){
        props.StartGame();
     }
 
-
     return(
         <div id="MainMenu">
             <h1>Kapitan Dupa</h1>

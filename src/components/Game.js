@@ -20,31 +20,32 @@ class Game extends React.Component {
       super(props);
       this.state={currentGameWindow:'Menu', mainGameImage:spoczynek_png, Score:0, currentKwiatyLotosu:0, isPressed:false, isGameActive:true};
       this.kwiatyLotosu = [kwiatyLotosu0,kwiatyLotosu1,kwiatyLotosu2,kwiatyLotosu3,kwiatyLotosu4,kwiatyLotosu5,kwiatyLotosu6];
+      this.sound = new Audio(introSound);
   }
 
     StartGame = () =>{
         this.playAudio(gamingSound);
-        let timeleft = 30;
-        const myInterval = timeleft/6;
+        let timeLeft = 30;
+        const myInterval = timeLeft/6;
         const Timer = () => {
-            timeleft = timeleft - myInterval;
+            timeLeft = timeLeft - myInterval;
                 switch(true){
-                    case timeleft >= 5*myInterval:
+                    case timeLeft >= 5*myInterval:
                         this.setState({currentKwiatyLotosu:1});
                         break;
-                    case timeleft >= 3.99*myInterval:
+                    case timeLeft >= 3.99*myInterval:
                         this.setState({currentKwiatyLotosu:2});
                         break;
-                    case timeleft >= 3*myInterval:
+                    case timeLeft >= 3*myInterval:
                         this.setState({currentKwiatyLotosu:3});
                         break;
-                    case timeleft >= 1.99*myInterval:
+                    case timeLeft >= 1.99*myInterval:
                         this.setState({currentKwiatyLotosu:4});
                         break;
-                    case timeleft >= 0.99*myInterval:
+                    case timeLeft >= 0.99*myInterval:
                         this.setState({currentKwiatyLotosu:5});
                         break;
-                    case timeleft <= myInterval:
+                    case timeLeft <= myInterval:
                         clearInterval(interv);
                         this.setState({currentKwiatyLotosu:6,isGameActive:false});
                         setTimeout(() => this.setState({currentGameWindow:"GameOver"}), 3000);
@@ -86,12 +87,13 @@ class Game extends React.Component {
         this.setState({currentGameWindow:'Menu', mainGameImage:spoczynek_png, Score:0, currentKwiatyLotosu:0, isPressed:false, isGameActive:true});
     }
 
-    playAudio = (audio) =>{
-        let sound = new Audio(audio);
-        sound.play()
-        .catch(err =>{
-            console.log("DLACZEGO NIE RYPIECIE");
-        });
+    playAudio = (sound) => {
+        this.sound.pause();
+        this.sound = new Audio(sound);
+        this.sound.play()
+            .catch(() => {
+                console.log("PAMIĘTAJCIE LUFĄ!, NIE KOLBĄ!");
+            });
     }
 
     componentDidMount() {

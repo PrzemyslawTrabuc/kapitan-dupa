@@ -1,8 +1,11 @@
 import React from 'react';
 import './GameOver.scss';
 import introSound from '../sounds/intro.mp3';
+import miernyWynikSound from '../sounds/mierny-wynik.mp3';
 
 function GameOver({Score, restartGame, playAudio}){
+
+    playAudio(miernyWynikSound);
 
     function handleRestartClick(){
         restartGame();

@@ -8,7 +8,10 @@ function FireButton(props){
     }
 
     return(
-    <div id="FireButton" onMouseDown={handleClick} onMouseUp={handleClick} onTouchStart={handleClick} onTouchEnd={handleClick}><h3>Fire</h3></div>
+    <div id="FireButton" onMouseDown={handleClick} onMouseUp={handleClick} onTouchStart={handleClick} onTouchEnd={handleClick}>
+        <h3>Fire</h3>
+        <h3 className="not-visible-in-mobile"><i style={{fontWeight: 450}}>"space"</i></h3>
+    </div>
     )
 }
 

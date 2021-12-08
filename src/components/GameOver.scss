@@ -6,7 +6,7 @@ $bodyBackgroundColor: #1e1e1e;
   margin-left:auto;
   margin-right:auto;
   color:$green-theme;
-  font-size:6rem;
+  font-size:4rem;
   margin-top:0vh;
   text-align:center;
   font-weight:400;
@@ -22,10 +22,10 @@ $bodyBackgroundColor: #1e1e1e;
 #Restart{
   margin-top:20vh;
   text-shadow: 0 0 4px $green-theme;
-  font-size:4rem;
+  font-size:3rem;
   cursor: pointer;
 }
-@media only screen and (max-width: 980px) {
+@media screen and (max-width: 700px), (max-height: 680px) {
 
   #game-over-score{
     font-size:2.5rem;

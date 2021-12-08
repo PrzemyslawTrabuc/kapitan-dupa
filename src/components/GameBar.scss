@@ -19,7 +19,7 @@ $green-theme: rgb(0,255,0);
   box-shadow: 0px 0px 2px $green-theme;
 }
 
-@media only screen and (max-width: 980px) {
+@media screen and (max-width: 700px), (max-height: 680px) {
   .GameBar{
     width:95vw;
   }

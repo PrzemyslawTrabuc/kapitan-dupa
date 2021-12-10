@@ -25,6 +25,18 @@ $bodyBackgroundColor: #1e1e1e;
   font-size:3rem;
   cursor: pointer;
 }
+
+#Restart > img{
+  max-width:2.5rem;
+  visibility:hidden;
+  margin-right:-41px;
+}
+
+
+#Restart:hover > img{
+  visibility: visible;
+}
+
 @media screen and (max-width: 700px), (max-height: 680px) {
 
   #game-over-score{
@@ -33,5 +45,10 @@ $bodyBackgroundColor: #1e1e1e;
   #Restart{
     font-size:2rem;
     margin-top:10vh;
+  }
+
+  #Restart >img{
+    max-height:2rem;
+    margin-right: -31px;
   }
 }

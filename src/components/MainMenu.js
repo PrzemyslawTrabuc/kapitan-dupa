@@ -1,5 +1,6 @@
 import React from 'react';
 import './MainMenu.scss';
+import kapitanDupaHead from '../images/Kapitan-dupa-head.png';
 
 function MainMenu(props){
 
@@ -12,8 +13,8 @@ function MainMenu(props){
         <div id="MainMenu">
             <h1>Kapitan Dupa</h1>
             <div id="menu-items">
-                <h2  onClick={handleStartClick}>START</h2>
-                <h2>Highscores</h2> {/*TODO: add action to highs-core */}
+                <h2  onClick={handleStartClick}>START <img src={kapitanDupaHead} alt="menu pointer" /></h2>
+                <h2>Highscores <img src={kapitanDupaHead} alt="menu pointer"/></h2> {/*TODO: add action to highs-core */}
             </div>
         </div>
     );

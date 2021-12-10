@@ -8,11 +8,13 @@ body{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: url('../images/cursor.png'), auto;
 }
 
 #main_game_window{
 height:100vh;
 }
+
 #main_game_window > img {
   display: block;
   margin:auto;
@@ -21,6 +23,7 @@ height:100vh;
   padding-top:5vh;
   padding-bottom:10vh;
 }
+
 #game-over-alert{
   width:100%;
   position: fixed;

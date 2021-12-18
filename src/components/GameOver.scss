@@ -16,7 +16,6 @@ $bodyBackgroundColor: #1e1e1e;
 
 #game-over-score > p{
   text-shadow: 0 0 4px $green-theme;
-  margin-top:1vh;
   margin-bottom:3vh;
 }
 #Restart{
@@ -50,5 +49,8 @@ $bodyBackgroundColor: #1e1e1e;
   #Restart >img{
     max-height:2rem;
     margin-right: -31px;
+  }
+  #game-over-score > p{
+    margin-top:1vh;
   }
 }

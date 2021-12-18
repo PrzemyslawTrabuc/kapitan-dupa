@@ -3,7 +3,6 @@ $green-theme: rgb(0,255,0);
 
 body{
   background-color: $bodyBackgroundColor;
-  height:100vh;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -12,7 +11,8 @@ body{
 }
 
 #main_game_window{
-height:100vh;
+  height: auto;
+  clear: both;
 }
 
 #main_game_window > img {
@@ -62,5 +62,19 @@ height:100vh;
   }
   .not-visible-in-mobile{
     visibility:hidden;
+  }
+}
+@media screen and (min-height:1200px){
+  #main_game_window > img {
+    min-width: 70vh;
+    padding-top: 5vh;
+    max-height:70vh;
+  }
+}
+@media screen and (min-height:1900px){
+  #main_game_window > img {
+    min-width: 70vh;
+    padding-top: 5vh;
+    max-height:70vh;
   }
 }

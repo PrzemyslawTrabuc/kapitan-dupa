@@ -33,10 +33,11 @@ body{
   font-size:12rem;
   margin-top:8vh;
   text-align:center;
-  text-shadow: -1px -1px 0 $bodyBackgroundColor, 1px -1px 0 $bodyBackgroundColor, -1px 1px 0 $bodyBackgroundColor, 1px 1px 0 $bodyBackgroundColor;
+  text-shadow: -1px -1px 0 $bodyBackgroundColor, 1px -1px 0 $bodyBackgroundColor, -1px 1px 0 $bodyBackgroundColor, 8px 8px 0 $bodyBackgroundColor;
   animation: blinking 0.9s infinite;
   font-weight:400;
   letter-spacing: 5px;
+  z-index:999;
 }
 
 @keyframes blinking
@@ -46,6 +47,10 @@ body{
   60%{    visibility: hidden;  }
   99%{    visibility: hidden;    }
   100%{   visibility: visible;    }
+}
+
+.darken{
+  filter:brightness(50%);
 }
 
 @media screen and (max-width: 700px), (max-height: 680px) {

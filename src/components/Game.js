@@ -25,10 +25,11 @@ class Game extends React.Component {
 
     StartGame = () =>{
         this.playAudio(gamingSound);
-        let timeLeft = 30;
+        let timeLeft = 1;
         const myInterval = timeLeft/6;
         const Timer = () => {
             timeLeft = timeLeft - myInterval;
+                // eslint-disable-next-line default-case
                 switch(true){
                     case timeLeft >= 5*myInterval:
                         this.setState({currentKwiatyLotosu:1});
@@ -118,7 +119,7 @@ class Game extends React.Component {
         return (
             <div id={"main_game_window"}>
                 <div id="game-over-alert">GAME OVER</div>
-                <img alt='głowny ekran gry' src={this.state.mainGameImage}/>
+                <img alt='głowny ekran gry' className='darken' src={this.state.mainGameImage}/>
                 <GameBar
                     handleClickFireButton={this.handleClickFireButton}
                     Score={this.state.Score}

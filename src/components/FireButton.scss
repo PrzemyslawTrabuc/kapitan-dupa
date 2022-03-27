@@ -14,13 +14,20 @@ $textColor: rgb(0,255,0);
   letter-spacing: 1px;
   background-Color:rgba(0,255,0,0.15);
 }
+
+
+#FireButton:hover{ 
+  background-Color:rgba(0, 255, 0, 0.26);
+}
+
 #FireButton h3{
 margin:0;
+font-size:1rem;
 }
 
 @media screen and (max-width: 700px), (max-height: 680px) {
   #FireButton h3{
-    font-size:1rem;
+    font-size:0.5rem;
   }
   #FireButton{
     height:50%;

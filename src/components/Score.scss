@@ -18,12 +18,15 @@ $textColor: rgb(0,255,0);
   margin:0;
 }
 h3{
-  font-size:2rem;
+  font-size:1rem;
+  padding-top:.35rem;
+  margin-right: -60px;
 }
 
 @media screen and (max-width: 700px), (max-height: 680px) {
   h3{
-    font-size:1rem;
+    font-size:0.5rem;
+    padding-top:.35rem;
   }
   #Score{
     height:50%;

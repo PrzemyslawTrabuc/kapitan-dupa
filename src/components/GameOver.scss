@@ -11,7 +11,7 @@ $bodyBackgroundColor: #1e1e1e;
   text-align:center;
   font-weight:400;
   position: absolute;
-  top:5px;
+  top:1.5rem;
 }
 
 #game-over-score > p{
@@ -23,12 +23,13 @@ $bodyBackgroundColor: #1e1e1e;
   text-shadow: 0 0 4px $green-theme;
   font-size:3rem;
  // cursor: pointer;
+ text-align: center;
 }
 
 #Restart > img{
   max-width:2.5rem;
   visibility:hidden;
-  margin-right:-41px;
+  margin-right:-49px;
 }
 
 
@@ -47,8 +48,7 @@ $bodyBackgroundColor: #1e1e1e;
   }
 
   #Restart >img{
-    max-height:2rem;
-    margin-right: -31px;
+    margin-left: -29px;
   }
   #game-over-score > p{
     margin-top:1vh;

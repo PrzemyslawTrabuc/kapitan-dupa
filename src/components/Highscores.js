@@ -24,10 +24,10 @@ const Highscores = (props) => {
     const renderPlayersList = () => {
         const list = players.map((player) => (
             <React.Fragment key={player.id}>
-                    <tr style={{fontSize:'calc(35% + 0.8vmin)', height:'.8rem'}}>
-                        <td>{player.Name}</td>
-                        <td>{player.Score}</td>
-                    </tr>
+                <tr style={{fontSize: 'calc(35% + 0.8vmin)', height: '.8rem'}}>
+                    <td>{player.Name}</td>
+                    <td>{player.Score}</td>
+                </tr>
             </React.Fragment>
         ));
         return list;
@@ -36,9 +36,9 @@ const Highscores = (props) => {
     return (
         <div>
             <h1>Highscores</h1>
-            <table style={{width:'100%'}}>
+            <table style={{width: '100%'}}>
                 <tbody>
-                <tr style={{textAlign: 'left', height:'3rem'}}>
+                <tr style={{textAlign: 'left', height: '3rem'}}>
                     <th>Name</th>
                     <th>Score</th>
                 </tr>

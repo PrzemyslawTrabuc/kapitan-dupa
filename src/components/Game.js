@@ -12,8 +12,11 @@ import kwiatyLotosu5 from '../images/kwiatyLotosu5.png'
 import kwiatyLotosu6 from '../images/kwiatyLotosu6.png'
 import GameBar from './GameBar';
 import GameOver from './GameOver';
+import Highscores from "./Highscores";
 import introSound from '../sounds/intro.mp3';
 import gamingSound from '../sounds/during-game.mp3';
+//import firestore_data from '../firebase/firestore_axios';
+
 
 class Game extends React.Component {
   constructor(props){
@@ -23,9 +26,11 @@ class Game extends React.Component {
       this.sound = new Audio(introSound);
   }
 
+
+
     StartGame = () =>{
         this.playAudio(gamingSound);
-        let timeLeft = 30;
+        let timeLeft = 3;
         const myInterval = timeLeft/6;
         const Timer = () => {
             timeLeft = timeLeft - myInterval;
@@ -97,9 +102,30 @@ class Game extends React.Component {
             });
     }
 
+    // uploadPlayerHighscore = async()=>{
+    //     //  const response = firestore_data.post('',{
+    //     //    "fields": {
+    //     //         "Name":{
+    //     //             stringValue: "test"
+    //     //        },
+    //     //         "Score":{
+    //     //          integerValue: 9000000
+    //     //     }
+    //     //      }
+    //     //  })
+    // //     console.log(response);
+    //     const response = await setDoc(doc(db,"test",'dupa'),{
+    //     //const response = await addDoc(collection(db,"test"),{
+    //          Name: 'test',
+    //          Score: 69
+    //     })
+    //     console.log(response)
+    // }
+
     componentDidMount() {
         document.addEventListener("keydown", this.handleSpaceBarClick)
         this.playAudio(introSound);
+        //this.uploadPlayerHighscore();
     }
 
     render(){
@@ -132,7 +158,7 @@ class Game extends React.Component {
     else if(this.state.currentGameWindow === "GameOver" && this.state.isGameActive===false){
         return(
             <div id={"main_game_window"}>
-                <img alt='głowny ekran gry' src={this.state.mainGameImage} style={{opacity: 0}} />
+                <img alt='główny ekran gry' src={this.state.mainGameImage} style={{opacity: 0}} />
             <GameOver Score={this.state.Score} restartGame={this.restartGame} playAudio={this.playAudio} />
             <GameBar
             handleClickFireButton={this.handleClickFireButton}

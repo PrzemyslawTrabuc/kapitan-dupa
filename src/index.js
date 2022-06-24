@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Game from './components/Game';
 import reportWebVitals from './reportWebVitals';
+import './Global.scss'
 
 ReactDOM.render(
   <React.StrictMode>

@@ -28,7 +28,7 @@ const Highscores = (props) => {
                     <td>{player.Name}</td>
                     <td>{player.Score}</td>
                 </tr>
-            </React.Fragment>
+            </React.Fragment> asd
         ));
         return list;
     }

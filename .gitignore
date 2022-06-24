@@ -4,8 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-.env
-./src/firebase
+env
+/src/firebase
 
 # testing
 /coverage

@@ -19,7 +19,6 @@ function MainMenu(props) {
 
     const renderModal = () => {
         if(modalVisibility){
-            console.log("dupa")
             return(
                 <Modal onDismiss={onDismiss} content={<Highscores />}></Modal>
             )
@@ -38,7 +37,7 @@ function MainMenu(props) {
             <div id="menu-items">
                 <h2 onClick={handleStartClick}>START <img src={kapitanDupaHead} alt="menu pointer"/></h2>
                 <h2 onClick={handleHighscoresClick}>Highscores <img src={kapitanDupaHead} alt="menu pointer"/>
-                </h2> {/*TODO: add action to highs-core */}
+                </h2>
                 {renderModal()}
             </div>
         </div>

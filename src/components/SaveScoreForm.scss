@@ -1,0 +1,36 @@
+@import '../Colors.scss';
+
+input{
+  border: none;
+  display:flex;
+  width: 85%;
+  height: 45%;
+  display: block;
+  margin: auto;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  text-align: center;
+  color: lime;
+  box-shadow: 0 0 2px lime;
+  text-shadow: 0 0 4px lime;
+  letter-spacing: 1px;
+  background-Color: rgba(0, 255, 0, 0.15);
+  font-size:1rem;
+  font-family: -apple-system, BlinkMacSystemFont, MyFont;
+}
+
+input:focus{
+  outline:none;
+}
+
+.form__score{
+  padding:20px;
+}
+
+.score__input{
+  box-shadow: none;
+  text-shadow: none;
+  background-Color: #1e1e1e;
+  font-size:1.2rem;
+  cursor: url('../images/cursor.png'), auto;
+}

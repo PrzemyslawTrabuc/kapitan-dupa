@@ -12,10 +12,9 @@ import kwiatyLotosu5 from '../images/kwiatyLotosu5.png'
 import kwiatyLotosu6 from '../images/kwiatyLotosu6.png'
 import GameBar from './GameBar';
 import GameOver from './GameOver';
-import Highscores from "./Highscores";
 import introSound from '../sounds/intro.mp3';
 import gamingSound from '../sounds/during-game.mp3';
-//import firestore_data from '../firebase/firestore_axios';
+
 
 
 class Game extends React.Component {
@@ -25,8 +24,6 @@ class Game extends React.Component {
       this.kwiatyLotosu = [kwiatyLotosu0,kwiatyLotosu1,kwiatyLotosu2,kwiatyLotosu3,kwiatyLotosu4,kwiatyLotosu5,kwiatyLotosu6];
       this.sound = new Audio(introSound);
   }
-
-
 
     StartGame = () =>{
         this.playAudio(gamingSound);

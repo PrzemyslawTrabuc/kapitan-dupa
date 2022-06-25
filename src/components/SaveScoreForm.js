@@ -1,31 +1,30 @@
 import React, {useEffect} from 'react';
 import {getDocs, collection, doc, setDoc, addDoc, query, orderBy, limit} from 'firebase/firestore';
 import db from "../firebase/firebase";
+import '../Global.scss';
+import './SaveScoreForm.scss'
 
-const SaveScoreForm = () =>{
+const SaveScoreForm = (props) => {
 
-    useEffect(() =>{
-        getHighestFromFirestore();
+    const Score = props.score;
+
+    useEffect(() => {
+        document.getElementById('Score').value = Score;
     },[])
 
-    const getHighestFromFirestore = async () => {
-        let highestScore = 0;
-        const q = query(collection(db, "test"), orderBy("Score", "desc"), limit(1));
-        const response = await getDocs(q);
-        response.forEach((score)=>{
-            highestScore = score.data().Score;
-        })
-        console.log(highestScore);
-        return highestScore;
-    }
-
-    return(
-        <div>
-            <form>
+    return (
+        <div className='form__score'>
+            <form className="main__text--color">
                 <label>
-                        DUPA
+                    Nickname
                 </label>
-                <input>
+                <input className='nickname__input'>
+
+                </input>
+                <label>
+                    Score:
+                </label>
+                <input className="score__input" type='text' readOnly value={Score}>
 
                 </input>
             </form>

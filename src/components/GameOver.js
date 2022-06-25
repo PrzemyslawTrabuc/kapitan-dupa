@@ -5,36 +5,49 @@ import miernyWynikSound from '../sounds/mierny-wynik.mp3';
 import kapitanDupaHead from "../images/Kapitan-dupa-head.png";
 import Modal from "./Modal";
 import SaveScoreForm from './SaveScoreForm'
+import {getDocs, collection, doc, setDoc, addDoc, query, orderBy, limit} from 'firebase/firestore';
+import db from "../firebase/firebase";
 
-function GameOver({Score, restartGame, playAudio}){
-    const [modalVisibility, setModalVisibility] = useState(true)
+function GameOver({Score, restartGame, playAudio}) {
+    const [modalVisibility, setModalVisibility] = useState(false)
+    const [topScore, setTopScore] = useState(0)
 
-    useEffect(() =>{
+    useEffect(() => {
         playAudio(miernyWynikSound);
-    },[])
+        getHighestFromFirestore();
+    }, [])
 
-    function handleRestartClick(){
+    function handleRestartClick() {
         restartGame();
         playAudio(introSound)
     }
 
+    const getHighestFromFirestore = async () => {
+        let topScore = 0;
+        const q = query(collection(db, "test"), orderBy("Score", "desc"), limit(1));
+        const response = await getDocs(q);
+        response.forEach((score) => {
+            topScore = score.data().Score;
+        })
+        setTopScore(topScore);
+        setModalVisibility(true);
+    }
+
     const renderModal = () => {
-        console.log(Score)
-        if(modalVisibility){
-            console.log("dupa")
-            return(
-                <Modal onDismiss={onDismiss} content={<SaveScoreForm />}></Modal>
+        if (modalVisibility && Score < topScore) {
+            return (
+                <Modal onDismiss={onDismiss} content={<SaveScoreForm score={Score}/>}></Modal>
             )
-        }else{
+        } else
             return null
-        }
     }
 
-    const onDismiss = () =>{
+    const onDismiss = () => {
         setModalVisibility(false)
+        restartGame();
     }
 
-    return(
+    return (
         <div id="game-over-score">
             <p>Score: </p>
             <p>{Score}</p>
@@ -43,4 +56,5 @@ function GameOver({Score, restartGame, playAudio}){
         </div>
     )
 }
+
 export default GameOver;

@@ -4,15 +4,17 @@ import db from "../firebase/firebase";
 import '../Global.scss';
 import './SaveScoreForm.scss'
 import score from "./Score";
+import topScore from '../sounds/top-score.mp3';
 
 const SaveScoreForm = (props) => {
 
-    const [nameValue, setNameValue] = useState(null);
+    const [nameValue, setNameValue] = useState('');
 
     const Score = props.score;
 
     useEffect(() => {
         document.getElementById('Score').value = Score;
+        props.playAudio(topScore);
     }, [])
 
 

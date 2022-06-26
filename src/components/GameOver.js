@@ -1,20 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import './GameOver.scss';
 import introSound from '../sounds/intro.mp3';
-import miernyWynikSound from '../sounds/mierny-wynik.mp3';
+import miernyWynikSound from '../sounds/mierny-wynikV2.mp3';
 import kapitanDupaHead from "../images/Kapitan-dupa-head.png";
 import Modal from "./Modal";
 import SaveScoreForm from './SaveScoreForm'
 import {getDocs, collection, doc, setDoc, addDoc, query, orderBy, limit} from 'firebase/firestore';
 import db from "../firebase/firebase";
+import tryAgain from '../sounds/try-again.mp3';
 
 function GameOver({Score, restartGame, playAudio}) {
     const [modalVisibility, setModalVisibility] = useState(false)
     const [topScore, setTopScore] = useState(0)
 
     useEffect(() => {
-        playAudio(miernyWynikSound);
         getHighestFromFirestore();
+        //playAudio(miernyWynikSound);
     }, [])
 
     function handleRestartClick() {
@@ -30,7 +31,10 @@ function GameOver({Score, restartGame, playAudio}) {
             topScore = score.data().Score;
         })
         setTopScore(topScore);
-        setModalVisibility(true);
+
+        if(topScore < Score){
+            setModalVisibility(true);
+        }
     }
 
     const uploadPlayerHighscore = async (name,date) => {
@@ -48,12 +52,15 @@ function GameOver({Score, restartGame, playAudio}) {
     }
 
     const renderModal = () => {
-        if (modalVisibility && Score < topScore) {
+        if (modalVisibility) {
             return (
-                <Modal onDismiss={onDismiss} content={<SaveScoreForm score={Score} getTopScore={getHighestFromFirestore} topScore={topScore} onSubmit={uploadPlayerHighscore}/>}></Modal>
+                <Modal onDismiss={onDismiss} content={<SaveScoreForm score={Score} getTopScore={getHighestFromFirestore} topScore={topScore} onSubmit={uploadPlayerHighscore} playAudio={playAudio}/>}></Modal>
             )
-        } else
+        } else{
+            playAudio(miernyWynikSound);
             return null
+        }
+
     }
 
     const onDismiss = () => {

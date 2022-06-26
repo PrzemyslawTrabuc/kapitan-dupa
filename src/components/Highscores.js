@@ -35,7 +35,7 @@ const Highscores = () => {
 
     return (
         <div>
-            <h1>Highscores</h1>
+            <h1 className="modal__header">Highscores</h1>
             <table style={{width: '100%'}}>
                 <tbody>
                 <tr style={{textAlign: 'left', height: '3rem'}}>

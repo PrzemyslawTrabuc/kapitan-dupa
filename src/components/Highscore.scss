@@ -3,3 +3,14 @@
 tbody{
   color: $textColor;
 }
+
+.modal__header{
+  font-size:2rem;
+  text-align:center;
+}
+
+@media screen and (max-width: 600px){
+  .modal__header{
+    font-size:1.2rem !important;
+  }
+}

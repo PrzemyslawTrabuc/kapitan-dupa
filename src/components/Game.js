@@ -27,7 +27,7 @@ class Game extends React.Component {
 
     StartGame = () =>{
         this.playAudio(gamingSound);
-        let timeLeft = 3;
+        let timeLeft = 1;
         const myInterval = timeLeft/6;
         const Timer = () => {
             timeLeft = timeLeft - myInterval;

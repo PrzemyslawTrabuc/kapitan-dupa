@@ -33,10 +33,24 @@ function GameOver({Score, restartGame, playAudio}) {
         setModalVisibility(true);
     }
 
+    const uploadPlayerHighscore = async (name,date) => {
+        console.log('uploading...')
+        //const response = await setDoc(doc(db, "test", 'dupa'), {
+        if (topScore < Score) {
+            const response = await addDoc(collection(db, "test"), {
+                Name: name,
+                Score: Score,
+                Date: date
+            })
+            console.log('uploaded');
+        }
+        console.log('score is not saved')
+    }
+
     const renderModal = () => {
         if (modalVisibility && Score < topScore) {
             return (
-                <Modal onDismiss={onDismiss} content={<SaveScoreForm score={Score}/>}></Modal>
+                <Modal onDismiss={onDismiss} content={<SaveScoreForm score={Score} getTopScore={getHighestFromFirestore} topScore={topScore} onSubmit={uploadPlayerHighscore}/>}></Modal>
             )
         } else
             return null

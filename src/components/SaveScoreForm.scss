@@ -15,11 +15,13 @@ input{
   text-shadow: 0 0 4px lime;
   letter-spacing: 1px;
   background-Color: rgba(0, 255, 0, 0.15);
-  font-size:1rem;
+  font-size:.8rem;
   font-family: -apple-system, BlinkMacSystemFont, MyFont;
 }
 
 input:focus{
+  box-shadow: 0 0 4px lime;
+  text-shadow: 0 0 2px lime;
   outline:none;
 }
 
@@ -33,4 +35,14 @@ input:focus{
   background-Color: #1e1e1e;
   font-size:1.2rem;
   cursor: url('../images/cursor.png'), auto;
+}
+
+button{
+  font-family: -apple-system, BlinkMacSystemFont, MyFont;
+  font-size:1rem;
+}
+
+label{
+  text-align: center;
+  display: block;
 }

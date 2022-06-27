@@ -41,8 +41,8 @@ const Highscores = () => {
             <div className="Highscore__modal">
             <table style={{width: '100%'}}>
                 <tbody>
-                <tr style={{textAlign: 'left', height: '3rem'}}>
-                    <th>Rank</th>
+                <tr style={{textAlign: 'left', height: '3rem'}} className='table__header'>
+                    <th style={{width:'10%'}}>Rank</th>
                     <th>Name</th>
                     <th>Score</th>
                 </tr>

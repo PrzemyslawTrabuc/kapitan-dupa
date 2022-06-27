@@ -9,12 +9,15 @@ tbody{
   text-align:center;
 }
 
+
 .Highscore__modal{
   max-height:500px;
+  min-height:400px;
   overflow:auto;
 }
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 /* Track */
 ::-webkit-scrollbar-track {
@@ -28,6 +31,10 @@ tbody{
 @media screen and (max-width: 600px){
   .modal__header{
     font-size:1.2rem !important;
+  }
+
+  .table__header{
+    font-size:.7rem;
   }
 }
 

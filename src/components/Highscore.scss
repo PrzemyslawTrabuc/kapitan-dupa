@@ -12,9 +12,11 @@ tbody{
 
 .Highscore__modal{
   max-height:500px;
-  min-height:400px;
+  min-height:300px;
   overflow:auto;
 }
+
+// BAR
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -40,6 +42,7 @@ tbody{
 
 @media screen and (max-height: 600px){
   .Highscore__modal{
-    max-height:200px;
+    max-height:140px;
+    min-height:auto;
   }
 }

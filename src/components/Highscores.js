@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import db from '../firebase/firebase.js';
-import {getDocs, collection, query, orderBy, addDoc, limit} from 'firebase/firestore';
+import {getDocs, collection, query, orderBy, limit} from 'firebase/firestore';
 import './Highscore.scss';
 
 const Highscores = () => {

@@ -35,8 +35,10 @@ function GameOver({Score, restartGame, playAudio}) {
         })
         setTopScore(topScore);
 
-        if (topScore > Score) {
+        if (topScore < Score) {
             setModalVisibility(true);
+        }else{
+            playAudio(miernyWynikSound);
         }
     }
 
@@ -82,8 +84,8 @@ function GameOver({Score, restartGame, playAudio}) {
                        content={<SaveScoreForm score={Score} getTopScore={getHighestFromFirestore} topScore={topScore}
                                                onSubmit={uploadPlayerHighscore} playAudio={playAudio}/>}></Modal>
             )
-        } else {
-            playAudio(miernyWynikSound);
+        } else{
+            //playAudio(miernyWynikSound);
             return null
         }
 

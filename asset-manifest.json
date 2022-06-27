@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kapitan-dupa/static/css/main.bdc18ebd.chunk.css",
-    "main.js": "/kapitan-dupa/static/js/main.b6712906.chunk.js",
-    "main.js.map": "/kapitan-dupa/static/js/main.b6712906.chunk.js.map",
+    "main.js": "/kapitan-dupa/static/js/main.fe872595.chunk.js",
+    "main.js.map": "/kapitan-dupa/static/js/main.fe872595.chunk.js.map",
     "runtime-main.js": "/kapitan-dupa/static/js/runtime-main.f230aa75.js",
     "runtime-main.js.map": "/kapitan-dupa/static/js/runtime-main.f230aa75.js.map",
     "static/js/2.4de9eec1.chunk.js": "/kapitan-dupa/static/js/2.4de9eec1.chunk.js",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.f230aa75.js",
     "static/js/2.4de9eec1.chunk.js",
     "static/css/main.bdc18ebd.chunk.css",
-    "static/js/main.b6712906.chunk.js"
+    "static/js/main.fe872595.chunk.js"
   ]
 }

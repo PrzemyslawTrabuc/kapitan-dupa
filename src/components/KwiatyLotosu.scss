@@ -33,9 +33,24 @@ $textColor: rgb(0,255,0);
   #KwiatyLotosu > img{
     margin:auto;
     width: auto;
-    max-width:85%;
+    max-width:75%;
   }
+}
 
+@media screen and (max-height: 420px){
+  #KwiatyLotosu > img{
+    margin-top:-5%;
+  }
+}
+
+@media screen and (max-height: 460px) and (max-width:380px){
+  #KwiatyLotosu > img {
+    max-width: 45%;
+    margin-right:10%;
+  }
+  #KwiatyLotosu > h3{
+    margin-right:10%;
+  }
 }
 
 @media screen and (max-width: 570px) {

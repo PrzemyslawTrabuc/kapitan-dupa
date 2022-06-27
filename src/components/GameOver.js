@@ -87,7 +87,7 @@ function GameOver({Score, restartGame, playAudio}) {
             )
         } else{
             //playAudio(miernyWynikSound);
-            return null
+            return <p style={{fontSize:'1rem'}}>You are missing {topScore-Score+100} to beat tough guy! 8==D </p>
         }
 
     }
@@ -100,9 +100,8 @@ function GameOver({Score, restartGame, playAudio}) {
     return (
         <div id="game-over-score">
             {renderSubmitFeedback(isSubmitted)}
-            <p>Score: </p>
-            <p>{Score}</p>
-            <div id="Restart" onClick={handleRestartClick}>Restart <img src={kapitanDupaHead} alt="menu pointer"/></div>
+            <p>Score: {Score} </p>
+            <p id="Restart" onClick={handleRestartClick}>Restart <img src={kapitanDupaHead} alt="menu pointer"/></p>
             {renderModal()}
         </div>
     )

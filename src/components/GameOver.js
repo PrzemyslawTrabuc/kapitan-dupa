@@ -45,8 +45,9 @@ function GameOver({Score, restartGame, playAudio}) {
     const uploadPlayerHighscore = async (name, date) => {
         console.log('uploading...')
         let verifyScore = (numberOfClicks + 2137) * 100;
+        console.log(numberOfClicks, verifyScore, Score)
         //const response = await setDoc(doc(db, "test", 'dupa'), {
-        if (topScore > Score && verifyScore === Score) {
+        if (topScore < Score && verifyScore === Score) {
             const response = await addDoc(collection(db, "test"), {
                 Name: name,
                 Score: Score,

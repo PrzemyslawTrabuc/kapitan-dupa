@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "/kapitan-dupa/static/css/main.31f2eac4.chunk.css",
-    "main.js": "/kapitan-dupa/static/js/main.a3a6f394.chunk.js",
-    "main.js.map": "/kapitan-dupa/static/js/main.a3a6f394.chunk.js.map",
-    "runtime-main.js": "/kapitan-dupa/static/js/runtime-main.3ede24d4.js",
-    "runtime-main.js.map": "/kapitan-dupa/static/js/runtime-main.3ede24d4.js.map",
-    "static/js/2.5e0ac477.chunk.js": "/kapitan-dupa/static/js/2.5e0ac477.chunk.js",
-    "static/js/2.5e0ac477.chunk.js.map": "/kapitan-dupa/static/js/2.5e0ac477.chunk.js.map",
-    "static/js/3.b71b4a0b.chunk.js": "/kapitan-dupa/static/js/3.b71b4a0b.chunk.js",
-    "static/js/3.b71b4a0b.chunk.js.map": "/kapitan-dupa/static/js/3.b71b4a0b.chunk.js.map",
+    "main.css": "/kapitan-dupa/static/css/main.0e41e930.chunk.css",
+    "main.js": "/kapitan-dupa/static/js/main.51ba83fa.chunk.js",
+    "main.js.map": "/kapitan-dupa/static/js/main.51ba83fa.chunk.js.map",
+    "runtime-main.js": "/kapitan-dupa/static/js/runtime-main.f230aa75.js",
+    "runtime-main.js.map": "/kapitan-dupa/static/js/runtime-main.f230aa75.js.map",
+    "static/js/2.4de9eec1.chunk.js": "/kapitan-dupa/static/js/2.4de9eec1.chunk.js",
+    "static/js/2.4de9eec1.chunk.js.map": "/kapitan-dupa/static/js/2.4de9eec1.chunk.js.map",
+    "static/js/3.34a24115.chunk.js": "/kapitan-dupa/static/js/3.34a24115.chunk.js",
+    "static/js/3.34a24115.chunk.js.map": "/kapitan-dupa/static/js/3.34a24115.chunk.js.map",
     "index.html": "/kapitan-dupa/index.html",
-    "static/css/main.31f2eac4.chunk.css.map": "/kapitan-dupa/static/css/main.31f2eac4.chunk.css.map",
-    "static/js/2.5e0ac477.chunk.js.LICENSE.txt": "/kapitan-dupa/static/js/2.5e0ac477.chunk.js.LICENSE.txt",
+    "static/css/main.0e41e930.chunk.css.map": "/kapitan-dupa/static/css/main.0e41e930.chunk.css.map",
+    "static/js/2.4de9eec1.chunk.js.LICENSE.txt": "/kapitan-dupa/static/js/2.4de9eec1.chunk.js.LICENSE.txt",
     "static/media/Kapitan-dupa-head.906f4bc8.png": "/kapitan-dupa/static/media/Kapitan-dupa-head.906f4bc8.png",
     "static/media/index.css": "/kapitan-dupa/static/media/PressStart2P-Regular.c5b47093.ttf",
     "static/media/during-game.d3cf3b60.mp3": "/kapitan-dupa/static/media/during-game.d3cf3b60.mp3",
     "static/media/intro.3b6fadd1.mp3": "/kapitan-dupa/static/media/intro.3b6fadd1.mp3",
-    "static/media/mierny-wynik.af11aae7.mp3": "/kapitan-dupa/static/media/mierny-wynik.af11aae7.mp3"
+    "static/media/mierny-wynikV2.b735ba12.mp3": "/kapitan-dupa/static/media/mierny-wynikV2.b735ba12.mp3",
+    "static/media/top-score.b3a3d715.mp3": "/kapitan-dupa/static/media/top-score.b3a3d715.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.3ede24d4.js",
-    "static/js/2.5e0ac477.chunk.js",
-    "static/css/main.31f2eac4.chunk.css",
-    "static/js/main.a3a6f394.chunk.js"
+    "static/js/runtime-main.f230aa75.js",
+    "static/js/2.4de9eec1.chunk.js",
+    "static/css/main.0e41e930.chunk.css",
+    "static/js/main.51ba83fa.chunk.js"
   ]
 }

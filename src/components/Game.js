@@ -28,6 +28,8 @@ class Game extends React.Component {
   }
 
     StartGame = () =>{
+        this.numberOfClicks = 0;
+        this.setState({Score:0, currentKwiatyLotosu:0})
         this.playAudio(gamingSound);
         let timeLeft = 30;
         const myInterval = timeLeft/6;

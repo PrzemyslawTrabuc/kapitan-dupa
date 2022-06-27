@@ -22,9 +22,11 @@ const Highscores = () => {
     }
 
     const renderPlayersList = () => {
+        let number = 1;
         const list = players.map((player) => (
             <React.Fragment key={player.id}>
                 <tr style={{fontSize: 'calc(35% + 0.8vmin)', height: '.8rem'}}>
+                    <td>{number++}</td>
                     <td>{player.Name}</td>
                     <td>{player.Score}</td>
                 </tr>
@@ -40,6 +42,7 @@ const Highscores = () => {
             <table style={{width: '100%'}}>
                 <tbody>
                 <tr style={{textAlign: 'left', height: '3rem'}}>
+                    <th>Rank</th>
                     <th>Name</th>
                     <th>Score</th>
                 </tr>

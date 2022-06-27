@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import db from '../firebase/firebase.js';
-import {getDocs, collection, query, orderBy, addDoc,} from 'firebase/firestore';
+import {getDocs, collection, query, orderBy, addDoc, limit} from 'firebase/firestore';
 import './Highscore.scss';
 
 const Highscores = () => {
@@ -13,7 +13,7 @@ const Highscores = () => {
 
     const getPlayersFromFirestore = async () => {
         let Players = []
-        const q = query(collection(db, "test"), orderBy("Score", "desc"));
+        const q = query(collection(db, "test"), orderBy("Score", "desc"), limit(100));
         const response2 = await getDocs(q);
         response2.forEach((player) => {
             Players.push({...player.data(), "id": player.id})
@@ -36,6 +36,7 @@ const Highscores = () => {
     return (
         <div>
             <h1 className="modal__header">Highscores</h1>
+            <div className="Highscore__modal">
             <table style={{width: '100%'}}>
                 <tbody>
                 <tr style={{textAlign: 'left', height: '3rem'}}>
@@ -45,7 +46,7 @@ const Highscores = () => {
                 {renderPlayersList(players)}
                 </tbody>
             </table>
-
+            </div>
         </div>
     )
 }

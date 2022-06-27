@@ -27,7 +27,6 @@ const SaveScoreForm = (props) => {
 
         const onNameChange = (event) => {
             setNameValue(event.target.value)
-            console.log(nameValue);
         }
 
 

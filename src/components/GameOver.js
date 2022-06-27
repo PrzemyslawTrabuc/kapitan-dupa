@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import './GameOver.scss';
 import introSound from '../sounds/intro.mp3';
 import miernyWynikSound from '../sounds/mierny-wynikV2.mp3';
@@ -7,11 +7,14 @@ import Modal from "./Modal";
 import SaveScoreForm from './SaveScoreForm'
 import {getDocs, collection, doc, setDoc, addDoc, query, orderBy, limit} from 'firebase/firestore';
 import db from "../firebase/firebase";
-import tryAgain from '../sounds/try-again.mp3';
+import {ClicksContext} from "../contexts/ClicksContext";
 
 function GameOver({Score, restartGame, playAudio}) {
     const [modalVisibility, setModalVisibility] = useState(false)
-    const [topScore, setTopScore] = useState(0)
+    const [topScore, setTopScore] = useState(0);
+    const [isSubmitted, setIsSubmitted] = useState(null);
+    const numberOfClicks = useContext(ClicksContext);
+
 
     useEffect(() => {
         getHighestFromFirestore();
@@ -32,31 +35,54 @@ function GameOver({Score, restartGame, playAudio}) {
         })
         setTopScore(topScore);
 
-        if(topScore < Score){
+        if (topScore > Score) {
             setModalVisibility(true);
         }
     }
 
-    const uploadPlayerHighscore = async (name,date) => {
+    const uploadPlayerHighscore = async (name, date) => {
         console.log('uploading...')
+        let verifyScore = (numberOfClicks + 2137) * 100;
         //const response = await setDoc(doc(db, "test", 'dupa'), {
-        if (topScore < Score) {
+        if (topScore > Score && verifyScore === Score) {
             const response = await addDoc(collection(db, "test"), {
                 Name: name,
                 Score: Score,
                 Date: date
             })
-            console.log('uploaded');
+            setIsSubmitted(true);
+            setModalVisibility(false);
+        }else{
+            setIsSubmitted(false);
+            setModalVisibility(false);
         }
-        console.log('score is not saved')
+    }
+
+    const renderSubmitFeedback = (isOk) => {
+        if (isOk === true) {
+            return (
+                <>
+                    <p style={{fontSize:'1rem'}}>Score is Saved!</p>
+                </>
+            )
+        }else if(isOk===false)
+            return (
+                <>
+                    <p style={{fontSize:'1rem'}}>Are you Marik1234!?</p>
+                </>
+            )
+
+
     }
 
     const renderModal = () => {
         if (modalVisibility) {
             return (
-                <Modal onDismiss={onDismiss} content={<SaveScoreForm score={Score} getTopScore={getHighestFromFirestore} topScore={topScore} onSubmit={uploadPlayerHighscore} playAudio={playAudio}/>}></Modal>
+                <Modal onDismiss={onDismiss}
+                       content={<SaveScoreForm score={Score} getTopScore={getHighestFromFirestore} topScore={topScore}
+                                               onSubmit={uploadPlayerHighscore} playAudio={playAudio}/>}></Modal>
             )
-        } else{
+        } else {
             playAudio(miernyWynikSound);
             return null
         }
@@ -65,11 +91,12 @@ function GameOver({Score, restartGame, playAudio}) {
 
     const onDismiss = () => {
         setModalVisibility(false)
-        restartGame();
+        //restartGame();
     }
 
     return (
         <div id="game-over-score">
+            {renderSubmitFeedback(isSubmitted)}
             <p>Score: </p>
             <p>{Score}</p>
             <div id="Restart" onClick={handleRestartClick}>Restart <img src={kapitanDupaHead} alt="menu pointer"/></div>

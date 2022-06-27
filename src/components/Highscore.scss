@@ -9,8 +9,30 @@ tbody{
   text-align:center;
 }
 
+.Highscore__modal{
+  max-height:500px;
+  overflow:auto;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(24, 24, 24, 0.9);;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $textColor;
+}
+
 @media screen and (max-width: 600px){
   .modal__header{
     font-size:1.2rem !important;
+  }
+}
+
+@media screen and (max-height: 600px){
+  .Highscore__modal{
+    max-height:200px;
   }
 }

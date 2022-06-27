@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import './Game.scss';
 import MainMenu from './MainMenu'
 import spoczynek_png from '../images/spoczynek.png';
@@ -14,6 +14,7 @@ import GameBar from './GameBar';
 import GameOver from './GameOver';
 import introSound from '../sounds/intro.mp3';
 import gamingSound from '../sounds/during-game.mp3';
+import {ClicksContext} from "../contexts/ClicksContext";
 
 
 
@@ -23,6 +24,7 @@ class Game extends React.Component {
       this.state={currentGameWindow:'Menu', mainGameImage:spoczynek_png, Score:0, currentKwiatyLotosu:0, isPressed:false, isGameActive:true};
       this.kwiatyLotosu = [kwiatyLotosu0,kwiatyLotosu1,kwiatyLotosu2,kwiatyLotosu3,kwiatyLotosu4,kwiatyLotosu5,kwiatyLotosu6];
       this.sound = new Audio(introSound);
+      this.numberOfClicks = 0;
   }
 
     StartGame = () =>{
@@ -74,6 +76,7 @@ class Game extends React.Component {
     handleClickFireButton = (event) =>{
         if(event.type === "mousedown" && this.state.isGameActive===true){
             this.setState({Score: this.state.Score + 100, mainGameImage: atak_png});
+            this.numberOfClicks++;
         }else if(event.type === "mouseup" && this.state.isGameActive===true) {
             this.setState({mainGameImage:spoczynek_png});
 
@@ -88,6 +91,7 @@ class Game extends React.Component {
 
     restartGame = () =>{
         this.setState({currentGameWindow:'Menu', mainGameImage:spoczynek_png, Score:0, currentKwiatyLotosu:0, isPressed:false, isGameActive:true});
+        this.numberOfClicks=0;
     }
 
     playAudio = (sound) => {
@@ -156,7 +160,9 @@ class Game extends React.Component {
         return(
             <div id={"main_game_window"}>
                 <img alt='główny ekran gry' src={this.state.mainGameImage} style={{opacity: 0}} />
+                <ClicksContext.Provider value={this.numberOfClicks - 2137}>
             <GameOver Score={this.state.Score} restartGame={this.restartGame} playAudio={this.playAudio} />
+                </ClicksContext.Provider>
             <GameBar
             handleClickFireButton={this.handleClickFireButton}
             Score={this.state.Score}

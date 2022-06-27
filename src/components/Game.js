@@ -66,6 +66,7 @@ class Game extends React.Component {
             if(this.state.isPressed===false) {
                 document.addEventListener("keyup", this.handleSpaceBarClick)
                 this.setState({isPressed:true, Score:this.state.Score+100, mainGameImage:atak_png})
+                this.numberOfClicks++;
             }
         }else if(event.type === "keyup" && event.keyCode === 32 && this.state.isGameActive===true) {
             this.setState({isPressed:false,mainGameImage:spoczynek_png});

@@ -88,7 +88,7 @@ function GameOver({Score, restartGame, playAudio}) {
         } else{
             //playAudio(miernyWynikSound);
             if(topScore >= Score) {
-                return <p style={{fontSize: '1rem'}}>You are missing {topScore - Score + 100} to beat tough guy!
+                return <p style={{fontSize: '1rem'}}>You are missing {topScore - Score + 100} points to beat tough guy!
                     8==D </p>
             }else
                 return null;

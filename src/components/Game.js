@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React from 'react';
 import './Game.scss';
 import MainMenu from './MainMenu'
 import spoczynek_png from '../images/spoczynek.png';

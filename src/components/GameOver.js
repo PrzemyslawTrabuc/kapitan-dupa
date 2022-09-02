@@ -8,8 +8,6 @@ import SaveScoreForm from "./SaveScoreForm";
 import {
   getDocs,
   collection,
-  doc,
-  setDoc,
   addDoc,
   query,
   orderBy,
@@ -26,7 +24,6 @@ function GameOver({ Score, restartGame, playAudio }) {
 
   useEffect(() => {
     getHighestFromFirestore();
-    //playAudio(miernyWynikSound);
   }, []);
 
   function handleRestartClick() {

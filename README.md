@@ -14,4 +14,5 @@ https://przemyslawtrabuc.github.io/kapitan-dupa/
 
 ## Tech Stack
 
-**Client:** React, Firebase
+**Client:** React
+**Database:** Firebase

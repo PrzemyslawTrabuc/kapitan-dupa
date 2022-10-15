@@ -39,7 +39,7 @@ h2{
 
 @media screen and (max-width: 700px), (max-height: 680px) {
   h1 {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
   h2{
     font-size: 1.5rem;
@@ -47,5 +47,11 @@ h2{
 
   #menu-items > h2 >img{
     margin-left:-20px;
+  }
+}
+
+@media screen and (max-width: 350px){
+  #menu-items > h2 >img{
+  display:none;
   }
 }

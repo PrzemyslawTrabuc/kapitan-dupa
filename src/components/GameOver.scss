@@ -54,3 +54,11 @@ $bodyBackgroundColor: #1e1e1e;
     margin-top:1vh;
   }
 }
+
+@media screen and (max-width: 350px){
+  #Restart >img{
+    display: none;
+  }
+
+  
+}

@@ -25,3 +25,9 @@ $green-theme: rgb(0,255,0);
   }
 
 }
+@media screen and (max-width: 350px){
+  .GameBar div{
+    border:none;
+   
+  }
+}

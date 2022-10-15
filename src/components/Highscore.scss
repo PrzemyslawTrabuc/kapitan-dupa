@@ -32,7 +32,7 @@ tbody{
 
 @media screen and (max-width: 600px){
   .modal__header{
-    font-size:1.2rem !important;
+    font-size:1.2rem;
   }
 
   .table__header{
@@ -44,5 +44,11 @@ tbody{
   .Highscore__modal{
     max-height:140px;
     min-height:auto;
+  }
+}
+
+@media screen and (max-width: 350px){
+  .modal__header{
+    font-size:1.1rem;
   }
 }

@@ -1,11 +1,10 @@
-$green-theme: rgb(0,255,0);
-$bodyBackgroundColor: #1e1e1e;
+@use '../Colors.scss';
 
 #game-over-score{
   width:100%;
   margin-left:auto;
   margin-right:auto;
-  color:$green-theme;
+  color:Colors.$green-theme;
   font-size:4rem;
   margin-top:0vh;
   text-align:center;
@@ -15,12 +14,12 @@ $bodyBackgroundColor: #1e1e1e;
 }
 
 #game-over-score > p{
-  text-shadow: 0 0 4px $green-theme;
+  text-shadow: 0 0 4px Colors.$green-theme;
   margin-bottom:3vh;
 }
 #Restart{
   margin-top:20vh;
-  text-shadow: 0 0 4px $green-theme;
+  text-shadow: 0 0 4px Colors.$green-theme;
   font-size:3rem;
  // cursor: pointer;
   text-align: center;

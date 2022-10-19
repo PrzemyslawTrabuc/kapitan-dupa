@@ -1,12 +1,12 @@
-@import './Colors.scss';
+@use './Colors.scss';
 
 h1{
-  color:$textColor;
-  text-shadow: 0px 0px 3px $textColor;
+  color:Colors.$green-theme;
+  text-shadow: 0px 0px 3px Colors.$green-theme;
 }
 
 .main__text--color{
-  color:$textColor;
+  color:Colors.$green-theme;
 }
 
 .modal-background{

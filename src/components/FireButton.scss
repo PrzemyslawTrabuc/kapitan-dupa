@@ -1,4 +1,4 @@
-$textColor: rgb(0,255,0);
+@use "../Colors.scss";
 
 
 #FireButton{
@@ -8,9 +8,9 @@ $textColor: rgb(0,255,0);
   margin: auto;
   margin-top:7vh;
   text-align: center;
-  color: $textColor;
-  box-shadow: 0px 0px 2px $textColor;
-  text-shadow: 0px 0px 4px $textColor;
+  color: Colors.$green_theme;
+  box-shadow: 0px 0px 2px Colors.$green_theme;
+  text-shadow: 0px 0px 4px Colors.$green_theme;
   letter-spacing: 1px;
   background-Color:rgba(0,255,0,0.15);
 }

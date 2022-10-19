@@ -1,4 +1,4 @@
-$green-theme: rgb(0,255,0);
+@use '../Colors.scss';
 
 .GameBar{
   color:white;
@@ -7,16 +7,16 @@ $green-theme: rgb(0,255,0);
   width: 80%;
   margin-left:auto;
   margin-right:auto;
-  border:2px solid $green-theme;
+  border:2px solid Colors.$green-theme;
   border-collapse: collapse;
   background-Color:rgba(0,255,0,0.07);
 }
 
 .GameBar div{
   width: 100%;
-  border:2px solid $green-theme;
+  border:2px solid Colors.$green-theme;
   border-collapse: collapse;
-  box-shadow: 0px 0px 2px $green-theme;
+  box-shadow: 0px 0px 2px Colors.$green-theme;
 }
 
 @media screen and (max-width: 700px), (max-height: 680px) {

@@ -1,12 +1,12 @@
-$textColor: rgb(0,255,0);
+@use '../Colors.scss';
 
 #MainMenu, #MainMenu> h1{
-  color: $textColor;
+  color: Colors.$green-theme;
   margin-right: auto;
   margin-left:auto;
   padding-top:1.5rem;
   text-align:center;
-  text-shadow: 0px 0px 3px $textColor;
+  text-shadow: 0px 0px 3px Colors.$green-theme;
   height:100%;
   margin-top:0;
   margin-bottom:25vh;

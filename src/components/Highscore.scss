@@ -1,7 +1,7 @@
-@import '../Colors.scss';
+@use '../Colors.scss';
 
 tbody{
-  color: $textColor;
+  color: Colors.$green-theme;
 }
 
 .modal__header{
@@ -27,7 +27,7 @@ tbody{
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $textColor;
+  background: Colors.$green-theme;
 }
 
 @media screen and (max-width: 600px){

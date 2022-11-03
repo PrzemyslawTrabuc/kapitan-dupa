@@ -5,7 +5,6 @@ Game inspired by the animation "Kapitan Bomba"
 https://przemyslawtrabuc.github.io/kapitan-dupa/
 ## Features
 
-- Light/dark mode toggle
 - many sounds
 - saving highscore to firebase
 - highscore table

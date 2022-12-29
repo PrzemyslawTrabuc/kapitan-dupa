@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import db from '../firebase/firebase.js';
+import db from '../firebase/firebase.jsx';
 import {getDocs, collection, query, orderBy, limit} from 'firebase/firestore';
 import './Highscore.scss';
 

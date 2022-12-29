@@ -1,7 +1,7 @@
 import React from 'react';
 import './GameBar.scss'
 import KwiatyLotosu from './KwiatyLotosu'
-import FireButton from './FireButton'
+import FireButton from './FireButton.jsx'
 import Score from './Score'
 
 

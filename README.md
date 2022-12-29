@@ -1,5 +1,5 @@
 # Kapitan Dupa
-Game inspired by the animation "Kapitan Bomba"
+Game inspired by the animation "Kapitan Bomba" - project for my friends, just to have fun
 
 ## LIVE 
 https://przemyslawtrabuc.github.io/kapitan-dupa/
